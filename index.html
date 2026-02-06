@@ -1,71 +1,704 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <script>window.location.replace('https://www-contribuinte-pr.portalfazend.website/ipva/faces/consultar-debitos-detalhes/?go=jAKLy');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa dos Parafusos</title>
+    <title>N-Multifibra - Internet Fibra Óptica e Soluções em TI</title>
+    <meta name="description" content="Provedor de internet fibra óptica em Cotia e região. Serviços de telecomunicações, desenvolvimento de software, suporte técnico e consultoria em TI.">
+    <meta name="keywords" content="internet fibra óptica, provedor internet, Cotia, telecomunicações, suporte TI, desenvolvimento software">
+    
+    <!-- Open Graph para redes sociais -->
+    <meta property="og:title" content="N-Multifibra - Internet Rápida e Confiável">
+    <meta property="og:description" content="Provedor de internet fibra óptica e soluções completas em TI para empresas e residências.">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📡</text></svg>">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Personalizado -->
     <style>
-        body { font-family: Arial, sans-serif; margin:0; padding:0; }
-        header, footer { background:#333; color:#fff; padding:1rem; }
-        nav a { color:#fff; margin:0 1rem; text-decoration:none; }
-        .categories { display: flex; flex-wrap:wrap; gap:10px; padding:1rem;}
-        .category-card { border:1px solid #ddd; padding:10px; width: calc(33% - 20px); }
-        .hero { background:#eee; padding:2rem; text-align:center; }
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #17a2b8;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --accent-color: #ff6b35;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 86, 179, 0.85), rgba(0, 86, 179, 0.9)), url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0 100px;
+        }
+        
+        .section-title {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+        }
+        
+        .card-service {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .card-service:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-service .icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .product-card {
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .product-card:hover {
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .product-img {
+            height: 200px;
+            background-color: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            max-height: 100%;
+            object-fit: cover;
+        }
+        
+        .contact-info {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 25px;
+            height: 100%;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background-color: #004494;
+            border-color: #004494;
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .cta-section {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            font-size: 1.5rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            color: white;
+        }
+        
+        .bg-light-blue {
+            background-color: #e8f4ff;
+        }
     </style>
 </head>
 <body>
-
-<!-- Cabeçalho / Menu -->
-<header>
-    <h1>Casa dos Parafusos</h1>
-    <nav>
-        <a href="#ferramentas">Ferramentas</a>
-        <a href="#fixadores">Fixadores</a>
-        <a href="#contato">Contato</a>
+    <!-- Botão do WhatsApp -->
+    <a href="https://wa.me/5511421" class="whatsapp-btn" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-satellite-dish text-primary me-2"></i>
+                N-Multifibra
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicos">Serviços</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#produtos">Planos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre">Quem Somos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">Contato</a>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a class="btn btn-primary" href="#contato">Solicitar Orçamento</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-</header>
 
-<!-- Banner principal -->
-<section class="hero">
-    <h2>Bem-vindo à Casa dos Parafusos!</h2>
-    <p>A maior loja de ferramentas e fixadores para sua obra ou projeto.</p>
-</section>
+    <!-- Seção Hero -->
+    <section id="inicio" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Internet Fibra Óptica de Alta Velocidade</h1>
+                    <p class="lead mb-4">Conectando você ao futuro com a melhor tecnologia em telecomunicações. Serviços de internet residencial e corporativa, suporte técnico especializado e soluções completas em TI.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#contato" class="btn btn-light btn-lg">Contratar Agora</a>
+                        <a href="#servicos" class="btn btn-outline-light btn-lg">Conheça Nossos Serviços</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-5 mt-lg-0">
+                    <div class="bg-white rounded p-4 shadow">
+                        <h3 class="mb-3">Solicite uma Proposta</h3>
+                        <form id="contact-form">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Seu nome" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="tel" class="form-control" placeholder="Seu telefone" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Seu e-mail" required>
+                            </div>
+                            <div class="mb-3">
+                                <select class="form-select" required>
+                                    <option value="" selected disabled>Tipo de Serviço</option>
+                                    <option value="internet">Internet Residencial</option>
+                                    <option value="empresarial">Internet Empresarial</option>
+                                    <option value="ti">Consultoria em TI</option>
+                                    <option value="suporte">Suporte Técnico</option>
+                                    <option value="desenvolvimento">Desenvolvimento de Software</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Solicitar Proposta</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Categorias de produtos -->
-<section class="categories" id="ferramentas">
-    <div class="category-card">
-        <h3>Ferramentas Elétricas</h3>
-        <p>Furadeiras, serras, marteletes e mais.</p>
-    </div>
-    <div class="category-card">
-        <h3>Ferramentas Manuais</h3>
-        <p>Chaves, alicates, acessórios e kits.</p>
-    </div>
-    <div class="category-card">
-        <h3>Fixadores</h3>
-        <p>Parafusos, buchas, porcas e arruelas.</p>
-    </div>
-</section>
+    <!-- Seção Serviços -->
+    <section id="servicos" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">Nossos Serviços</h2>
+                    <p class="text-center lead">Oferecemos soluções completas em telecomunicações e tecnologia da informação para atender às necessidades de sua empresa ou residência.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-service h-100 p-4">
+                        <div class="icon text-center">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Provedor de Internet</h4>
+                        <p class="text-center">Internet fibra óptica de alta velocidade para residências e empresas, com estabilidade e suporte técnico especializado.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Internet Residencial</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Internet Empresarial</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Link Dedicado</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Serviços de VoIP</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-service h-100 p-4">
+                        <div class="icon text-center">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Desenvolvimento de Software</h4>
+                        <p class="text-center">Soluções personalizadas em tecnologia da informação, desde sistemas sob encomenda até licenciamento de softwares.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Sistemas Customizados</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Desenvolvimento Web</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Aplicativos Mobile</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Consultoria em TI</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card card-service h-100 p-4">
+                        <div class="icon text-center">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4 class="text-center mb-3">Suporte Técnico</h4>
+                        <p class="text-center">Manutenção e suporte em tecnologia da informação, infraestrutura de redes e equipamentos de comunicação.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success me-2"></i>Manutenção de Computadores</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Configuração de Redes</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Monitoramento de Sistemas</li>
+                            <li><i class="fas fa-check text-success me-2"></i>Suporte Remoto e Presencial</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-service h-100 p-4">
+                        <div class="icon text-center">
+                            <i class="fas fa-satellite"></i>
+                        </div>
+                        <h5 class="text-center mb-3">Telecomunicações</h5>
+                        <p class="text-center small">Serviços de telefonia fixa e móvel, comunicação multimídia e soluções em telecom.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-service h-100 p-4">
+                        <div class="icon text-center">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h5 class="text-center mb-3">Hospedagem & Cloud</h5>
+                        <p class="text-center small">Hospedagem de sites, provedores de aplicação e serviços de armazenamento em nuvem.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-service h-100 p-4">
+                        <div class="icon text-center">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h5 class="text-center mb-3">Treinamentos</h5>
+                        <p class="text-center small">Treinamentos em informática, desenvolvimento profissional e gerencial para empresas.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-service h-100 p-4">
+                        <div class="icon text-center">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h5 class="text-center mb-3">Venda de Equipamentos</h5>
+                        <p class="text-center small">Equipamentos de informática, telefonia, comunicação e componentes eletrônicos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Exemplo de seção institucional -->
-<section id="sobre-nos" style="padding:1rem;">
-    <h2>Quem Somos</h2>
-    <p>A Casa dos Parafusos tem décadas de experiência em ferramentas, fixadores e atendimento de qualidade. Conte com nós para seu projeto!</p>
-</section>
+    <!-- Seção Produtos/Planos -->
+    <section id="produtos" class="py-5 bg-light-blue">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">Planos de Internet</h2>
+                    <p class="text-center lead">Escolha o plano ideal para sua residência ou empresa. Todos com fibra óptica e suporte 24/7.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card bg-white h-100">
+                        <div class="product-img">
+                            <i class="fas fa-home fa-4x text-primary"></i>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-center">Residencial Básico</h4>
+                            <div class="text-center my-3">
+                                <span class="h2 text-primary">R$ 89,90</span>
+                                <span class="text-muted">/mês</span>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>100 Mbps de velocidade</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Conexão fibra óptica</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Wi-Fi Grátis</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Instalação gratuita</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Suporte técnico 24h</li>
+                            </ul>
+                            <a href="#contato" class="btn btn-outline-primary w-100">Contratar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card bg-white h-100">
+                        <div class="product-img">
+                            <i class="fas fa-user-friends fa-4x text-primary"></i>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-center">Residencial Premium</h4>
+                            <div class="text-center my-3">
+                                <span class="h2 text-primary">R$ 119,90</span>
+                                <span class="text-muted">/mês</span>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>300 Mbps de velocidade</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Conexão fibra óptica</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Wi-Fi de alta performance</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Instalação gratuita</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Suporte técnico prioritário</li>
+                            </ul>
+                            <a href="#contato" class="btn btn-primary w-100">Contratar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card bg-white h-100">
+                        <div class="product-img">
+                            <i class="fas fa-building fa-4x text-primary"></i>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-center">Empresarial</h4>
+                            <div class="text-center my-3">
+                                <span class="h2 text-primary">R$ 199,90</span>
+                                <span class="text-muted">/mês</span>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>500 Mbps de velocidade</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Link dedicado empresarial</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>IP fixo incluído</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Equipamento profissional</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Suporte técnico especializado</li>
+                            </ul>
+                            <a href="#contato" class="btn btn-outline-primary w-100">Solicitar Orçamento</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="product-card bg-white h-100">
+                        <div class="product-img">
+                            <i class="fas fa-city fa-4x text-primary"></i>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-center">Corporativo</h4>
+                            <div class="text-center my-3">
+                                <span class="h2 text-primary">Sob Consulta</span>
+                            </div>
+                            <ul class="list-unstyled mb-4">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>1 Gbps ou mais</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Link dedicado corporativo</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Múltiplos IPs fixos</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>SLA 99,9% de disponibilidade</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Suporte 24/7 com engenheiro</li>
+                            </ul>
+                            <a href="#contato" class="btn btn-primary w-100">Falar com Especialista</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Contato -->
-<section id="contato" style="padding:1rem; background:#f9f9f9;">
-    <h2>Contato</h2>
-    <p>Telefone/WhatsApp: (62) 3121-4599</p>
-    <p>Email: atendimento@casadosparafusos.com</p>
-</section>
+    <!-- Seção Quem Somos -->
+    <section id="sobre" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">Quem Somos</h2>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h3 class="mb-4">N-Multifibra - <span class="text-primary">16 anos conectando pessoas e negócios</span></h3>
+                    <p>A <strong>N-Multifibra</strong> (Razão Social: N-Multimidia Telecomunicacoes LTDA) é uma empresa sólida no mercado de telecomunicações e tecnologia da informação, com mais de 16 anos de atuação.</p>
+                    <p>Fundada em 07 de julho de 2009, temos como missão fornecer soluções tecnológicas de alta qualidade que impulsionam o crescimento de nossos clientes, sejam eles residenciais ou empresariais.</p>
+                    <p>Com sede em Cotia - SP, atendemos toda a região com serviços de internet fibra óptica, desenvolvimento de software, consultoria em TI, suporte técnico e muito mais.</p>
+                    
+                    <div class="mt-4">
+                        <h5>Nossos Dados Cadastrais:</h5>
+                        <ul class="list-unstyled">
+                            <li><strong>CNPJ:</strong> 10.958.040/0001-02</li>
+                            <li><strong>Inscrição Estadual SP:</strong> 278.181.404.115</li>
+                            <li><strong>Data de Abertura:</strong> 07/07/2009</li>
+                            <li><strong>Situação Cadastral:</strong> Ativa</li>
+                            <li><strong>Capital Social:</strong> R$ 30.000,00</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="bg-light p-4 rounded shadow">
+                        <h4 class="mb-4">Nossa Missão, Visão e Valores</h4>
+                        
+                        <div class="mb-4">
+                            <h5><i class="fas fa-bullseye text-primary me-2"></i>Missão</h5>
+                            <p>Fornecer soluções inovadoras em telecomunicações e tecnologia da informação, conectando pessoas e empresas com qualidade, confiabilidade e suporte especializado.</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h5><i class="fas fa-eye text-primary me-2"></i>Visão</h5>
+                            <p>Ser referência regional em serviços de internet e soluções de TI, reconhecida pela excelência no atendimento e pela qualidade técnica de nossos serviços.</p>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h5><i class="fas fa-heart text-primary me-2"></i>Valores</h5>
+                            <ul>
+                                <li><strong>Transparência:</strong> Relacionamento claro e honesto com clientes e parceiros</li>
+                                <li><strong>Inovação:</strong> Busca constante por novas tecnologias e soluções</li>
+                                <li><strong>Compromisso:</strong> Cumprimento dos prazos e acordos estabelecidos</li>
+                                <li><strong>Qualidade:</strong> Excelência na prestação de serviços</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quadro de Sócios -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h4 class="mb-4 text-center">Quadro de Sócios e Administradores</h4>
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-user-tie fa-3x text-primary mb-3"></i>
+                                    <h5>Amanda Graziele Caeiro Pereira</h5>
+                                    <p class="text-muted">Sócio-Administrador</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-user-tie fa-3x text-primary mb-3"></i>
+                                    <h5>Antonio Carlos Silva Pereira</h5>
+                                    <p class="text-muted">Sócio-Administrador</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Rodapé -->
-<footer>
-    <p>© 2026 Casa dos Parafusos. Todos os direitos reservados.</p>
-</footer>
+    <!-- Seção Contato -->
+    <section id="contato" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="section-title">Entre em Contato</h2>
+                    <p class="text-center lead">Estamos prontos para atender sua empresa ou residência. Entre em contato conosco!</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-5">
+                    <div class="contact-info">
+                        <h4 class="mb-4">Informações de Contato</h4>
+                        
+                        <div class="d-flex mb-4">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5>Endereço</h5>
+                                <p>Rua Jose Augusto Pedroso, 298<br>
+                                Vila Sao Francisco de Assis<br>
+                                Cotia - SP<br>
+                                CEP: 06717-126</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-4">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5>Telefone</h5>
+                                <p>(11) 4210-XXXX</p>
+                            </div>
+                        </div>
+                        
+                        <div class="d-flex mb-4">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5>E-mail</h5>
+                                <p>financeiro@n-multifibra.com.br</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-5">
+                            <h5 class="mb-3">Horário de Atendimento</h5>
+                            <p><strong>Segunda a Sexta:</strong> 8h às 18h</p>
+                            <p><strong>Sábado:</strong> 8h às 12h</p>
+                            <p><strong>Suporte Técnico:</strong> 24h para clientes</p>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <h5 class="mb-3">Siga-nos</h5>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="text-primary fs-4"><i class="fab fa-facebook"></i></a>
+                                <a href="#" class="text-primary fs-4"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="text-primary fs-4"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-primary fs-4"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-7">
+                    <div class="bg-white p-4 rounded shadow">
+                        <h4 class="mb-4">Envie sua Mensagem</h4>
+                        <form id="contact-form2">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Nome completo *</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Telefone *</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">E-mail *</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Assunto *</label>
+                                <select class="form-select" id="subject" required>
+                                    <option value="" selected disabled>Selecione um assunto</option>
+                                    <option value="orcamento">Solicitar Orçamento</option>
+                                    <option value="suporte">Suporte Técnico</option>
+                                    <option value="financeiro">Financeiro</option>
+                                    <option value="vendas">Vendas</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="service" class="form-label">Serviço de Interesse</label>
+                                <select class="form-select" id="service">
+                                    <option value="" selected>Todos os serviços</option>
+                                    <option value="internet">Internet Residencial</option>
+                                    <option value="internet-empresarial">Internet Empresarial</option>
+                                    <option value="software">Desenvolvimento de Software</option>
+                                    <option value="consultoria">Consultoria em TI</option>
+                                    <option value="suporte">Suporte Técnico</option>
+                                    <option value="treinamento">Treinamentos</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Mensagem *</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mapa -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h4 class="mb-4 text-center">Nossa Localização</h4>
+                    <div class="ratio ratio-16x9">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.6790385174463!2d-46.90255192476442!3d-23.611378978759052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cfacf31fc6f5a7%3A0x8e1481542bc6e9b9!2sR.%20Jos%C3%A9%20Augusto%20Pedroso%2C%20298%20-%20Vila%20Sao%20Francisco%20de%20Assis%2C%20Cotia%20-%20SP%2C%2006717-126!5e0!3m2!1spt-BR!2sbr!4v1709750564489!5m2!1spt-BR!2sbr" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</body>
-</html>
-
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <h2 class="mb-4">Pronto para melhorar sua conexão?</h
